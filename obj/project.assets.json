@@ -4909,11 +4909,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaCliente\\consultaCliente.csproj",
+      "projectUniqueName": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaInsercaoDeDadosComApiIBGE\\consultaCliente.csproj",
       "projectName": "consultaCliente",
-      "projectPath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaCliente\\consultaCliente.csproj",
+      "projectPath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaInsercaoDeDadosComApiIBGE\\consultaCliente.csproj",
       "packagesPath": "C:\\Users\\leand\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaCliente\\obj\\",
+      "outputPath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaInsercaoDeDadosComApiIBGE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

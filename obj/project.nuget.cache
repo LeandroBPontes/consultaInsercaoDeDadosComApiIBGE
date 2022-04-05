@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WMANEDPzAevwZEj6Z8wT2BpXEQhzFGncaHIGEPdjFR/HMlbdQ8dN1VI7OfhNvVP8sKNSJdEFk0JO2I5Ucl4uog==",
+  "dgSpecHash": "vk66hiQVDUV+FRpQvMJAShvNjDl4i7O8Ob+VMFvAaFctvuyWM96o7R/Y9Jow8SIHrovVfg8Hcrwezmeqweymnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaCliente\\consultaCliente.csproj",
+  "projectFilePath": "C:\\Users\\leand\\Desktop\\projetoConsultaCliente\\consultaInsercaoDeDadosComApiIBGE\\consultaCliente.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leand\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\leand\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19249.1\\microsoft.data.sqlclient.1.0.19249.1.nupkg.sha512",
