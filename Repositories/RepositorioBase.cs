@@ -7,31 +7,31 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace consultaCliente.Repositories.Contracts {
-    public class RepositoryBase : IRepositoryBase {
+    public class RepositorioBase : IRepositorioBase {
         private readonly DataContext _context;
 
-        public RepositoryBase(DataContext context) {
+        public RepositorioBase(DataContext context) {
             _context = context;
         }
         public void Delete(int id) {
-            var User = _context.Users.Find(id);
-            _context.Users.Remove(User);
+            var User = _context.Clientes.Find(id);
+            _context.Clientes.Remove(User);
         }
 
-        public IEnumerable<User> Get() {
-            return _context.Users.ToList();
+        public IEnumerable<Cliente> Get() {
+            return _context.Clientes.ToList();
         }
 
-        public User GetByID(int id) {
-            return _context.Users.Find(id);
+        public Cliente GetByID(int id) {
+            return _context.Clientes.Find(id);
         }
 
-        public void Insert(User model) {
-            _context.Users.Add(model);
+        public void Insert(Cliente model) {
+            _context.Clientes.Add(model);
             _context.SaveChanges();
          
         }
-        public void Update(User model) {
+        public void Update(Cliente model) {
             _context.Entry(model).State = EntityState.Modified;
         }
 

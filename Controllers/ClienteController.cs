@@ -9,10 +9,10 @@ using System.Collections.Generic;
 namespace consultaCliente.Controllers {
     [Route("api/user")]
     [ApiController]
-    public class UserController : ControllerBase {
+    public class ClienteController : ControllerBase {
 
-        private readonly IRepositoryBase _repositorio;
-        public UserController(IRepositoryBase repositorio) {
+        private readonly IRepositorioBase _repositorio;
+        public ClienteController(IRepositorioBase repositorio) {
             _repositorio = repositorio;
         }
 
@@ -46,18 +46,18 @@ namespace consultaCliente.Controllers {
         }
 
         [HttpGet]
-        public ActionResult<User> Get() {
-            var users = _repositorio.Get();
-            return Ok(users);
+        public ActionResult<Cliente> Listar() {
+            var clientes = _repositorio.Get();
+            return Ok(clientes);
         }
 
-        [HttpPost("AceitaPlanoVip")]
-        public ActionResult ConfirmarPlanoVip(User model) {
-            return Ok();
-        }
+        //[HttpPost("AceitaPlanoVip")]
+        //public ActionResult ConfirmarPlanoVip(Cliente model) {
+        //    return Ok();
+        //}
 
         [HttpPost]
-        public ActionResult Inserir(User model) {
+        public ActionResult Inserir(Cliente model) {
             if (!ModelState.IsValid)
                 return BadRequest();
 

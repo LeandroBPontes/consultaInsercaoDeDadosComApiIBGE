@@ -1,4 +1,5 @@
 ﻿using consultaCliente.Dominios;
+using consultaCliente.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace consultaCliente.Database {
@@ -7,9 +8,7 @@ namespace consultaCliente.Database {
         public DataContext(DbContextOptions<DataContext> options) : base(options) {
 
         }
-
-        public DbSet<User> Users { get; set; }
-      
-
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<PlanoVip> PlanosVips { get; set; }
     }
 }

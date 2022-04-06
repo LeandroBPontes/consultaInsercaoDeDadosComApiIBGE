@@ -3,7 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace consultaCliente.Dominios {
-    public class User {
+    public class Cliente {
         /* Dados da Pessoa: NomeCompleto, DataNascimento, CPF.
          Dados do endereço da Pessoa: Logradouro, Bairro, CEP, Cidade, UF, Complemento.
          Dados financeiros da pessoa: Renda mensal.*/
@@ -18,8 +18,8 @@ namespace consultaCliente.Dominios {
         public string DataNascimento { get; set; }
 
         [Required(ErrorMessage = "Este campo é obragatório")]
-        [MaxLength(10, ErrorMessage = "Este campo deve conter 10 numeros, sem caracteres especiais")]
-        [MinLength(10, ErrorMessage = "Este campo deve conter 10 numeros, sem caracteres especiais")]
+        [MaxLength(10, ErrorMessage = "Este campo deve conter 10 numeros")]
+        [MinLength(10, ErrorMessage = "Este campo deve conter 10 numeros")]
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "Este campo é obragatório")]
@@ -47,7 +47,7 @@ namespace consultaCliente.Dominios {
         public string Complemento { get; set; }
 
         [Required(ErrorMessage = "Este campo é obragatório")]
-        public int RendaMensal { get; set; }
+        public int? RendaMensal { get; set; }
 
     }
 }

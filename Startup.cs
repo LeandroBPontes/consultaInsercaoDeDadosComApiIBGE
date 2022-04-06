@@ -31,7 +31,7 @@ namespace consultaCliente
 
             });
 
-            services.AddScoped<IRepositoryBase, RepositoryBase>();
+            services.AddScoped<IRepositorioBase, RepositorioBase>();
 
 
             //services.AddResponseCaching();
