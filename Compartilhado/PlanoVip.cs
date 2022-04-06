@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace consultaCliente.Compartilhado {
     public class PlanoVip {
+
+        public int? Id { get; set; }
         public Decimal Preco => 50000;
         public string Descricao => "O Plano Vip possui muitos benefícios além dos já obtidos. Não perca!";
 

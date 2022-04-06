@@ -1,9 +1,5 @@
 ﻿using consultaCliente.Repositorios.Contratos;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace consultaCliente.Controllers {
     public abstract class CrudController<TEntidade, TPrimary> : ControllerBase {
