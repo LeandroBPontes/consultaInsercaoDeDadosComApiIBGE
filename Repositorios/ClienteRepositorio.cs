@@ -1,16 +1,16 @@
 ﻿using consultaCliente.Database;
-using consultaCliente.Dominios;
-using consultaConsulta.Repositories.Contracts;
+using consultaCliente.Modelos;
+using consultaCliente.Repositorios.Contratos;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace consultaCliente.Repositories.Contracts {
-    public class RepositorioBase : IRepositorioBase {
+namespace consultaCliente.Repositorios {
+    public class ClienteRepositorio : IRepositorioBase<Cliente, int> {
         private readonly DataContext _context;
 
-        public RepositorioBase(DataContext context) {
+        public ClienteRepositorio(DataContext context) {
             _context = context;
         }
         public void Delete(int id) {

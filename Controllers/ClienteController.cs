@@ -1,21 +1,21 @@
-﻿using consultaCliente.Domain;
-using consultaCliente.Dominios;
-using consultaCliente.Shared;
-using consultaConsulta.Repositories.Contracts;
+﻿using consultaCliente.Modelos;
+using consultaCliente.Repositorios.Contratos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using consultaCliente.Compartilhado;
 
 namespace consultaCliente.Controllers {
     [Route("api/user")]
     [ApiController]
     public class ClienteController : ControllerBase {
 
-        private readonly IRepositorioBase _repositorio;
-        public ClienteController(IRepositorioBase repositorio) {
+        private readonly IRepositorioBase<Cliente, int> _repositorio;
+        public ClienteController(IRepositorioBase<Cliente, int> repositorio) {
             _repositorio = repositorio;
         }
 
+        //TODO - CRIAR CONTROLLER BASE 
 
         [HttpGet("BuscarUfsIBGE")]
         public List<UF> ListarUFS() {

@@ -1,7 +1,7 @@
 using System.Linq;
 using consultaCliente.Database;
-using consultaCliente.Repositories.Contracts;
-using consultaConsulta.Repositories.Contracts;
+using consultaCliente.Repositorios.Contratos;
+using consultaCliente.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;

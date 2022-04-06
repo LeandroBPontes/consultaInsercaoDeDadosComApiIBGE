@@ -1,7 +1,7 @@
 ﻿
-using consultaCliente.Dominios;
+using consultaCliente.Modelos;
 
-namespace consultaCliente.Shared {
+namespace consultaCliente.Compartilhado {
     public class PosCadastro {
         public bool Cadastrado { get; set; }
         public bool OferecerPlanoVip { get; set; }

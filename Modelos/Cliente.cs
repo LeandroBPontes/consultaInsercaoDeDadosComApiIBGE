@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace consultaCliente.Dominios {
+namespace consultaCliente.Modelos {
     public class Cliente {
         /* Dados da Pessoa: NomeCompleto, DataNascimento, CPF.
          Dados do endereço da Pessoa: Logradouro, Bairro, CEP, Cidade, UF, Complemento.
