@@ -7,7 +7,7 @@ using consultaCliente.Compartilhado;
 using consultaCliente.Dominios;
 
 namespace consultaCliente.Controllers {
-    [Route("api/user")]
+    [Route("api/cliente")]
     [ApiController]
     public class ClienteController : CrudController<Cliente, int> {
 

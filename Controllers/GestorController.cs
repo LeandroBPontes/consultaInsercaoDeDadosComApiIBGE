@@ -6,6 +6,8 @@ using System;
 using System.Linq;
 
 namespace consultaCliente.Controllers {
+    [Route("api/gestor")]
+    [ApiController]
     public class GestorController : CrudController<Gestor, int> {
 
         //private readonly IRepositorioBase<Gestor, int> _repositorio;
