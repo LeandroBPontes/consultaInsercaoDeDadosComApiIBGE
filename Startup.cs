@@ -9,6 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using consultaCliente.Modelos;
+using consultaCliente.Adm.Modelo;
+using consultaGestor.Repositorios;
+using consultaCliente.Compartilhado;
 
 namespace consultaCliente
 {
@@ -31,7 +35,9 @@ namespace consultaCliente
 
             });
 
-            services.AddScoped<IRepositorioBase, RepositorioBase>();
+            services.AddScoped<IRepositorioBase<Cliente, int>, ClienteRepositorio>();
+            services.AddScoped<IRepositorioBase<Gestor, int>, GestorRepositorio>();
+            services.AddScoped<IRepositorioBase<PlanoVip, int>, PlanoVipRepositorio>();
 
 
             //services.AddResponseCaching();

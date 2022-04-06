@@ -4,18 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using consultaCliente.Compartilhado;
+using consultaCliente.Dominios;
 
 namespace consultaCliente.Controllers {
     [Route("api/user")]
     [ApiController]
-    public class ClienteController : ControllerBase {
+    public class ClienteController : CrudController<Cliente, int> {
 
         private readonly IRepositorioBase<Cliente, int> _repositorio;
-        public ClienteController(IRepositorioBase<Cliente, int> repositorio) {
+        private readonly PlanoVipDominio _dominio;
+        public ClienteController(PlanoVipDominio dominio, IRepositorioBase<Cliente, int> repositorio) :base(repositorio) {
+            _dominio = dominio;
             _repositorio = repositorio;
         }
-
-        //TODO - CRIAR CONTROLLER BASE 
 
         [HttpGet("BuscarUfsIBGE")]
         public List<UF> ListarUFS() {
@@ -45,19 +46,23 @@ namespace consultaCliente.Controllers {
             return beneficios;
         }
 
-        [HttpGet]
-        public ActionResult<Cliente> Listar() {
-            var clientes = _repositorio.Get();
-            return Ok(clientes);
+        [HttpPost("ClienteInserePlanoVip")]
+        public ActionResult InserirCPlanoVip(PlanoVip model) {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            try {
+                _dominio.inserePlanoVip(model);
+                return Ok("Plano Vip inserido com sucesso!");
+            }
+            catch {
+                return BadRequest("Ocorreu um Problema!");
+            }
+
         }
 
-        //[HttpPost("AceitaPlanoVip")]
-        //public ActionResult ConfirmarPlanoVip(Cliente model) {
-        //    return Ok();
-        //}
-
-        [HttpPost]
-        public ActionResult Inserir(Cliente model) {
+        [HttpPost("InsereVerifica")]
+        public ActionResult InserirCliente(Cliente model) {
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -76,10 +81,9 @@ namespace consultaCliente.Controllers {
                 catch {
                     return BadRequest();
                 }
-               
 
             }
-                return BadRequest("O CPF não é válido!");
+            return BadRequest("O CPF não é válido!");
         }
     }
 

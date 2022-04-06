@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace consultaCliente.Modelos {
@@ -47,7 +48,9 @@ namespace consultaCliente.Modelos {
         public string Complemento { get; set; }
 
         [Required(ErrorMessage = "Este campo é obragatório")]
-        public int? RendaMensal { get; set; }
+        public Decimal? RendaMensal { get; set; }
+
+        public DateTime DataCadastro { get; set; } // DateTime.Now.ToString()
 
     }
 }
