@@ -22,7 +22,7 @@ namespace consultaCliente.Controllers {
             return Ok(clientes);
         }
 
-        [HttpGet("ListarClientesPorData/{RendaMensal}")]
+        [HttpGet("ListarClientesPorRendaMensal/{RendaMensal}")]
         public ActionResult<Cliente> ListarClientes(Decimal RendaMensal) {
 
             var clientes = _repositorioCliente.Get().Where(x => x.RendaMensal >= RendaMensal);
