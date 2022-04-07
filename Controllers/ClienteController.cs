@@ -85,6 +85,29 @@ namespace consultaCliente.Controllers {
             }
             return BadRequest("O CPF não é válido!");
         }
+
+        [HttpPut("AlteraEnderecoCliente/{id}")]
+        public IActionResult AtualizarEnderecoCliente(int id, [FromBody] Cliente model) {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var objeto = _repositorio.GetByID(id);
+
+            //Atualizando dados do endereco
+            objeto.Bairro = model.Bairro;
+            objeto.Logradouro = model.Logradouro;
+            objeto.CEP = model.CEP;
+            objeto.Cidade = model.Cidade;
+            objeto.UF = model.UF;
+            objeto.Complemento = model.Complemento;
+
+            if (objeto == null)
+                return NotFound();
+
+            _repositorio.Update(objeto);
+
+            return NoContent();
+        }
     }
 
 }
