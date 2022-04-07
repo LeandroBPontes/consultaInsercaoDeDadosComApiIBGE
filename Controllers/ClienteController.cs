@@ -86,12 +86,37 @@ namespace consultaCliente.Controllers {
             return BadRequest("O CPF não é válido!");
         }
 
+        [HttpGet("ObterEnderecoCliente/{id}")]
+        public ActionResult<Cliente> ObterEnderecoClientePorId(int id) {
+
+            var objeto = _repositorio.GetByID(id);
+
+            if (objeto == null)
+                return NotFound();
+            else {
+                var enderecoCliente = new Cliente();
+
+                //Atualizando dados do endereco
+                enderecoCliente.Bairro = objeto.Bairro;
+                enderecoCliente.Logradouro = objeto.Logradouro;
+                enderecoCliente.CEP = objeto.CEP;
+                enderecoCliente.Cidade = objeto.Cidade;
+                enderecoCliente.UF = objeto.UF;
+                enderecoCliente.Complemento = objeto.Complemento;
+                return Ok(enderecoCliente);
+            }
+        }
+
         [HttpPut("AlteraEnderecoCliente/{id}")]
         public IActionResult AtualizarEnderecoCliente(int id, [FromBody] Cliente model) {
+
             if (!ModelState.IsValid)
                 return BadRequest();
 
             var objeto = _repositorio.GetByID(id);
+
+            if (objeto == null)
+                return NotFound();
 
             //Atualizando dados do endereco
             objeto.Bairro = model.Bairro;
@@ -101,12 +126,13 @@ namespace consultaCliente.Controllers {
             objeto.UF = model.UF;
             objeto.Complemento = model.Complemento;
 
-            if (objeto == null)
-                return NotFound();
-
-            _repositorio.Update(objeto);
-
-            return NoContent();
+            try {
+                _repositorio.Update(objeto);
+                return NoContent();
+            }
+            catch {
+                return BadRequest("Ocorreu um erro ao atualizar seu endereço, tente novamente mais tarde");
+            }     
         }
     }
 
